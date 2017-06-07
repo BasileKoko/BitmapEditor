@@ -2,4 +2,5 @@ class BitmapEditor
 
   
 
+
 end
