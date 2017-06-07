@@ -5,4 +5,7 @@ class BitmapEditor
     file = gets.chomp
   end
 
+  def parse_file(file)
+    file_content = File.read(file).split("\n")
+  end
 end
