@@ -18,8 +18,11 @@ describe BitmapEditor do
   end
 
   describe '#parse_file' do
+    before(:each) do
+      @file_content = subject.parse_file(@file)
+    end
     it 'returns content of the file' do
-      expect(subject.parse_file(@file)[0]).to eq 'I 5 6'
+      expect(@file_content[0]).to eq 'I 5 6'
     end
   end
 end
