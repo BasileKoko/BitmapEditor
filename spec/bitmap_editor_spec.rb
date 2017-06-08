@@ -25,10 +25,11 @@ describe BitmapEditor do
 
   describe '#parse_file' do
     it 'parses file and call method evaluate for each line' do
+      subject.parse_file(@file)
       dbl = ["I 5 6"]
-      allow(dbl).to receive(:map) do |cmd_arg|
-        expect(subject).to receive(:evaluate).with(cmd_arg)
-      end
+      expect(subject).to receive(:evaluate).with(dbl)
+      subject.evaluate(dbl)
+
     end
   end
 end
