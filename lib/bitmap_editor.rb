@@ -20,6 +20,7 @@ class BitmapEditor
       when "V" then draw_vert(*args)
       when "H" then draw_horz(*args)
       when "S" then show_cont
+      when "C" then clear_tbl
       end
   end
 
@@ -36,5 +37,8 @@ class BitmapEditor
   end
 
   def show_cont
+  end
+
+  def clear_tbl
   end
 end
