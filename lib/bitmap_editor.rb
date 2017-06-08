@@ -16,10 +16,13 @@ class BitmapEditor
 
     case cmd.upcase
       when "I" then create_img(*args)
+      when "L" then colour_pix(*args)
       end
   end
 
   def create_img(*args)
   end
 
+  def colour_pix(*args)
+  end
 end
