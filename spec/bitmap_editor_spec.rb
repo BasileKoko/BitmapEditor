@@ -82,5 +82,11 @@ describe BitmapEditor do
         subject.clear_tbl
       end
     end
+
+    describe 'when command is not recognize' do
+      it 'return unknown command message' do
+        expect(subject.evaluate("Z")).to eq "Unknown command"
+      end
+    end
   end
 end
