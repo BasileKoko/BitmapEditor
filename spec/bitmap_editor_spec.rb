@@ -66,5 +66,13 @@ describe BitmapEditor do
         subject.draw_horz([3, 5, 2, "Z"])
       end
     end
+
+    describe 'when command is S' do
+      it 'calls show_cont method' do
+        allow(subject).to receive(:evaluate).with("S")
+        expect(subject).to receive(:show_cont)
+        subject.show_content
+      end
+    end
   end
 end
