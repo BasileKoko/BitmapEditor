@@ -54,7 +54,7 @@ describe BitmapEditor do
         cmd_arg = ["V 2 3 6 W"]
         allow(subject).to receive(:evaluate).with(cmd_arg)
         expect(subject).to receive(:draw_vert).with([2, 3, 6, "W"])
-        subject.colour_pix([2, 3, 6, "W"])
+        subject.draw_vert([2, 3, 6, "W"])
       end
     end
   end

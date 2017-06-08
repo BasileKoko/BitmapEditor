@@ -26,4 +26,5 @@ class BitmapEditor
 
   def colour_pix(*args)
   end
+
 end
