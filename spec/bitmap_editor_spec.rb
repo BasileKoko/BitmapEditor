@@ -30,5 +30,12 @@ describe BitmapEditor do
       expect(subject).to receive(:evaluate).with(dbl)
       subject.evaluate(dbl)
     end
+
+    it 'calls method create_img when command is I' do
+      cmd_arg = ["I 5 6"]
+      allow(subject).to receive(:evaluate).with(cmd_arg)
+      expect(subject).to receive(:create_img).with([5,6])
+      subject.create_img([5,6])
+    end
   end
 end
