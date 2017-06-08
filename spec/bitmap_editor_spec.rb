@@ -68,10 +68,18 @@ describe BitmapEditor do
     end
 
     describe 'when command is S' do
-      it 'calls show_cont method' do
+      it 'calls method show_cont' do
         allow(subject).to receive(:evaluate).with("S")
         expect(subject).to receive(:show_cont)
         subject.show_cont
+      end
+    end
+
+    describe 'when command is C' do
+      it 'calls method clear_tbl' do
+        allow(subject).to receive(:evaluate).with("C")
+        expect(subject).to receive(:clear_tbl)
+        subject.clear_tbl
       end
     end
   end
