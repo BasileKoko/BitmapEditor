@@ -1,8 +1,9 @@
+
 class BitmapEditor
 
-  def get_file(file)
+  def run(file)
     return puts "Please provide correct file" if file.nil? || !File.exists?(file)
-    file = gets.chomp
+    parse_file(file)
   end
 
   def parse_file(file)
