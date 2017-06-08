@@ -15,6 +15,12 @@ describe BitmapEditor do
       expect(STDOUT).to receive(:puts).with("Please provide correct file")
       subject.run('nofile.txt')
     end
+
+    it 'calls method parse_file when file provided exists' do
+      allow(subject).to receive(:run).with(@file)
+      expect(subject).to receive(:parse_file).with(@file)
+      subject.parse_file(@file)
+    end
   end
 
   describe '#parse_file' do
