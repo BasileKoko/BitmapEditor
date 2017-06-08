@@ -39,13 +39,22 @@ describe BitmapEditor do
         subject.create_img([5,6])
       end
     end
-    
+
     describe 'when command is L' do
       it 'calls method colour_pix' do
         cmd_arg = ["L 1 3 A"]
         allow(subject).to receive(:evaluate).with(cmd_arg)
         expect(subject).to receive(:colour_pix).with([1, 3, "A"])
         subject.colour_pix([1, 3, "A"])
+      end
+    end
+
+    describe 'when command is V' do
+      it 'calls method draw_vert' do
+        cmd_arg = ["V 2 3 6 W"]
+        allow(subject).to receive(:evaluate).with(cmd_arg)
+        expect(subject).to receive(:draw_vert).with([2, 3, 6, "W"])
+        subject.colour_pix([2, 3, 6, "W"])
       end
     end
   end

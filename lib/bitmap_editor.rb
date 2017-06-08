@@ -14,9 +14,10 @@ class BitmapEditor
   def evaluate(cmd_arg)
     cmd, *args = cmd_arg.split(' ').map { |el| el =~ /\d+/ ? el.to_i : el }
 
-    case cmd.upcase
+    case cmd
       when "I" then create_img(*args)
       when "L" then colour_pix(*args)
+
       end
   end
 
