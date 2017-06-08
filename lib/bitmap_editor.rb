@@ -17,7 +17,7 @@ class BitmapEditor
     case cmd
       when "I" then create_img(*args)
       when "L" then colour_pix(*args)
-
+      when "V" then draw_vert(*args)
       end
   end
 
@@ -27,4 +27,6 @@ class BitmapEditor
   def colour_pix(*args)
   end
 
+  def draw_vert(*args)
+  end
 end
