@@ -57,5 +57,14 @@ describe BitmapEditor do
         subject.draw_vert([2, 3, 6, "W"])
       end
     end
+
+    describe 'when command is H' do
+      it 'calls method draw_horz' do
+        cmd_arg = "H 3 5 2 Z"
+        allow(subject).to receive(:evaluate).with(cmd_arg)
+        expect(subject).to receive(:draw_vert).with([3, 5, 2, "Z"])
+        subject.draw_horz([3, 5, 2, "Z"])
+      end
+    end
   end
 end
