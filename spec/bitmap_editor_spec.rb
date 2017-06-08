@@ -26,17 +26,26 @@ describe BitmapEditor do
   describe '#parse_file' do
     it 'parses file and call method evaluate for each line' do
       subject.parse_file(@file)
-      dbl = ["I 5 6"]
+      dbl = "I 5 6"
       expect(subject).to receive(:evaluate).with(dbl)
       subject.evaluate(dbl)
     end
 
     describe 'when command is I' do
       it 'calls method create_img' do
-        cmd_arg = ["I 5 6"]
+        cmd_arg = "I 5 6"
         allow(subject).to receive(:evaluate).with(cmd_arg)
         expect(subject).to receive(:create_img).with([5,6])
         subject.create_img([5,6])
+      end
+    end
+    
+    describe 'when command is L' do
+      it 'calls method colour_pix' do
+        cmd_arg = ["L 1 3 A"]
+        allow(subject).to receive(:evaluate).with(cmd_arg)
+        expect(subject).to receive(:colour_pix).with([1, 3, "A"])
+        subject.colour_pix([1, 3, "A"])
       end
     end
   end
