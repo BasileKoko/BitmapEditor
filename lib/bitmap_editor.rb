@@ -21,6 +21,8 @@ class BitmapEditor
       when "H" then draw_horz(*args)
       when "S" then show_cont
       when "C" then clear_tbl
+      else
+        "Unknown command"
       end
   end
 
