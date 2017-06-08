@@ -24,11 +24,11 @@ describe BitmapEditor do
   end
 
   describe '#parse_file' do
-    before(:each) do
-      @file_content = subject.parse_file(@file)
-    end
-    it 'returns content of the file' do
-      expect(@file_content[0]).to eq 'I 5 6'
+    it 'parses file and call method evaluate for each line' do
+      dbl = ["I 5 6"]
+      allow(dbl).to receive(:map) do |cmd_arg|
+        expect(subject).to receive(:evaluate).with(cmd_arg)
+      end
     end
   end
 end
