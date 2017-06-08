@@ -8,5 +8,9 @@ class BitmapEditor
 
   def parse_file(file)
     file_content = File.read(file).split("\n")
+    file_content.map { |com_arg| evaluate com_arg }
+  end
+
+  def evaluate(com_arg)
   end
 end

@@ -29,7 +29,6 @@ describe BitmapEditor do
       dbl = ["I 5 6"]
       expect(subject).to receive(:evaluate).with(dbl)
       subject.evaluate(dbl)
-
     end
   end
 end
