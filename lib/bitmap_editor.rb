@@ -19,6 +19,7 @@ class BitmapEditor
       when "L" then colour_pix(*args)
       when "V" then draw_vert(*args)
       when "H" then draw_horz(*args)
+      when "S" then show_cont
       end
   end
 
@@ -32,5 +33,8 @@ class BitmapEditor
   end
 
   def draw_horz(*args)
+  end
+
+  def show_cont
   end
 end

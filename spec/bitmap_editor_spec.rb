@@ -71,7 +71,7 @@ describe BitmapEditor do
       it 'calls show_cont method' do
         allow(subject).to receive(:evaluate).with("S")
         expect(subject).to receive(:show_cont)
-        subject.show_content
+        subject.show_cont
       end
     end
   end
