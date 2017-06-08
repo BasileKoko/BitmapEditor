@@ -18,6 +18,7 @@ class BitmapEditor
       when "I" then create_img(*args)
       when "L" then colour_pix(*args)
       when "V" then draw_vert(*args)
+      when "H" then draw_horz(*args)
       end
   end
 
@@ -28,5 +29,8 @@ class BitmapEditor
   end
 
   def draw_vert(*args)
+  end
+
+  def draw_horz(*args)
   end
 end
