@@ -12,7 +12,14 @@ class BitmapEditor
   end
 
   def evaluate(cmd_arg)
+    cmd, *args = cmd_arg.split(' ').map {|el| el =~ /\d+/ ? el.to_i : el}
+
+    case cmd.upcase
+      when "I" then create_img(*args)
+      end
   end
 
+  def create_img(*args)
+  end
 
 end
