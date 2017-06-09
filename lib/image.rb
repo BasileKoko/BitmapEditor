@@ -13,4 +13,7 @@ class Image
   def draw_horizontal_segment(row, start_column, end_column, colour)
   end
 
+  def show_image_content
+  end
+
 end

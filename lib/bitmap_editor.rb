@@ -44,6 +44,7 @@ class BitmapEditor
   end
 
   def show_cont
+    @image.show_image_content
   end
 
   def clear_tbl
