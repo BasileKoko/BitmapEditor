@@ -109,6 +109,11 @@ describe BitmapEditor do
         expect(subject).to receive(:clear_tbl)
         subject.clear_tbl
       end
+      it 'calls class Image method clear_table' do
+        allow(subject).to receive(:clear_tbl)
+        expect(@image).to receive(:clear_table)
+        @image.clear_table
+      end
     end
 
     describe 'when command is not recognize' do
