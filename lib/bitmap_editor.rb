@@ -1,5 +1,6 @@
 
 class BitmapEditor
+  require_relative 'image'
 
   def run(file)
     return puts "Please provide correct file" if file.nil? || !File.exists?(file)
@@ -27,6 +28,7 @@ class BitmapEditor
   end
 
   def create_img(*args)
+    @image = Image.new(*args)
   end
 
   def colour_pix(*args)
