@@ -83,6 +83,11 @@ describe BitmapEditor do
         expect(subject).to receive(:draw_horz).with(3, 5, 2, "Z")
         subject.draw_horz(3, 5, 2, "Z")
       end
+      it 'calls class Image method draw_horizontal_segment' do
+        allow(subject).to receive(:draw_horz).with(3, 5, 2, "Z")
+        expect(@image).to receive(:draw_horizontal_segment).with(3,5,2,"Z")
+        @image.draw_horizontal_segment
+      end
     end
 
     describe 'when command is S' do
