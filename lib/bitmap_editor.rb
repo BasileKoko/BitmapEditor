@@ -36,6 +36,7 @@ class BitmapEditor
   end
 
   def draw_vert(*args)
+    @image.draw_vertical_segment(*args)
   end
 
   def draw_horz(*args)
