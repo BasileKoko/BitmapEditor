@@ -38,6 +38,10 @@ describe BitmapEditor do
         expect(subject).to receive(:create_img).with([5,6])
         subject.create_img([5,6])
       end
+
+      it 'method create_img creates new instance of class Image' do
+        expect(Image).to receive(:new).with [5,6]
+      end
     end
 
     describe 'when command is L' do
