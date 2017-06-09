@@ -96,6 +96,11 @@ describe BitmapEditor do
         expect(subject).to receive(:show_cont)
         subject.show_cont
       end
+      it 'calls class Image method show_image_content' do
+        allow(subject).to receive(:show_cont)
+        expect(@image).to receive(:show_image_content)
+        @image.show_image_content
+      end
     end
 
     describe 'when command is C' do
