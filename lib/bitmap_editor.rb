@@ -48,5 +48,6 @@ class BitmapEditor
   end
 
   def clear_tbl
+    @image.clear_table
   end
 end

@@ -16,4 +16,7 @@ class Image
   def show_image_content
   end
 
+  def clear_table
+  end
+
 end
