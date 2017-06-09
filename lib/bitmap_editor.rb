@@ -32,6 +32,7 @@ class BitmapEditor
   end
 
   def colour_pix(*args)
+    @image.colour_pixel(*args)
   end
 
   def draw_vert(*args)
