@@ -3,6 +3,7 @@ require 'bitmap_editor'
 describe BitmapEditor do
   before do
     @file = 'examples/show.txt'
+    @image = Image.new(5,6)
   end
 
   describe '#get_file' do
@@ -52,6 +53,12 @@ describe BitmapEditor do
         allow(subject).to receive(:evaluate).with(cmd_arg)
         expect(subject).to receive(:colour_pix).with(1, 3, "A")
         subject.colour_pix(1, 3, "A")
+      end
+
+      it 'calls class Image method colour_pixel' do
+        allow(subject).to receive(:colour_pix).with(1,3,"A")
+        expect(@image).to receive(:colour_pixel).with(1,3,"A")
+        @image.colour_pixel(1,3,"A")
       end
     end
 
