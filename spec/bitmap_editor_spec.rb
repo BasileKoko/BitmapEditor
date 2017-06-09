@@ -69,6 +69,11 @@ describe BitmapEditor do
         expect(subject).to receive(:draw_vert).with(2, 3, 6, "W")
         subject.draw_vert(2, 3, 6, "W")
       end
+      it 'calls class Image method draw_vertical_segment' do
+        allow(subject).to receive(:draw_vert).with(2, 3, 6, "W")
+        expect(@image).to receive(:draw_vertical_segment).with(2,3,6,"W")
+        @image.draw_vertical_segment(2,3,6,"W")
+      end
     end
 
     describe 'when command is H' do
