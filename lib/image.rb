@@ -1,6 +1,6 @@
 class Image
   attr_reader :columns, :rows
-  
+
   def initialize(columns, rows)
     @columns, @rows = columns, rows
   end
