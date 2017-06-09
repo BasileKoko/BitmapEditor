@@ -40,6 +40,7 @@ class BitmapEditor
   end
 
   def draw_horz(*args)
+    @image.draw_horizontal_segment(*args)
   end
 
   def show_cont

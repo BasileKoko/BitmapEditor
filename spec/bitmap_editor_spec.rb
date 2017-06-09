@@ -86,7 +86,7 @@ describe BitmapEditor do
       it 'calls class Image method draw_horizontal_segment' do
         allow(subject).to receive(:draw_horz).with(3, 5, 2, "Z")
         expect(@image).to receive(:draw_horizontal_segment).with(3,5,2,"Z")
-        @image.draw_horizontal_segment
+        @image.draw_horizontal_segment(3,5,2,"Z")
       end
     end
 
