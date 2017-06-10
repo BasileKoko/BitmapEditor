@@ -7,6 +7,7 @@ class Image
   end
 
   def colour_pixel(x, y, colour)
+    @pixels[y - 1][x - 1] = colour
   end
 
   def draw_vertical_segment(column, start_row, end_row, colour)
