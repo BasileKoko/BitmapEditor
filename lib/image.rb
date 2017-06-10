@@ -15,6 +15,7 @@ class Image
   end
 
   def draw_horizontal_segment(start_column, end_column, row, colour)
+    (start_column..end_column).map { |column| colour_pixel(column, row, colour) }
   end
 
   def show_image_content
@@ -24,6 +25,4 @@ class Image
   def clear_table
     @pixels = (1..@rows).map { (1..@columns).map {"O"} }
   end
-
-
 end
