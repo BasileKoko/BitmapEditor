@@ -23,4 +23,11 @@ describe Image do
       expect(@image.show_image_content).to eq "O O\nO O\nO C\n"
     end
   end
+
+  describe '#draw_vertical_segment' do
+    it 'draws vertical segment with given colour' do
+      @image.draw_vertical_segment(2,2,3,"W")
+      expect(@image.show_image_content).to eq "O O\nO W\nO W\n"
+    end
+  end
 end
