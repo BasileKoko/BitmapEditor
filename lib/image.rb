@@ -14,7 +14,7 @@ class Image
     (start_row..end_row).map { |row| colour_pixel(column, row, colour) }
   end
 
-  def draw_horizontal_segment(row, start_column, end_column, colour)
+  def draw_horizontal_segment(start_column, end_column, row, colour)
   end
 
   def show_image_content

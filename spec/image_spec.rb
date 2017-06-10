@@ -30,4 +30,11 @@ describe Image do
       expect(@image.show_image_content).to eq "O O\nO W\nO W\n"
     end
   end
+
+  describe '#draw_horizontal_segment' do
+    it 'draws horizontal segment with given colour' do
+      @image.draw_horizontal_segment(1,2,3,"Z")
+      expect(@image.show_image_content).to eq "O O\nO O\nZ Z\n"
+    end
+  end
 end
