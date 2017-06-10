@@ -6,7 +6,6 @@ class Image
     clear_table
   end
 
-
   def colour_pixel(x, y, colour)
   end
 
@@ -17,11 +16,12 @@ class Image
   end
 
   def show_image_content
-    @pixels.map {|pix| pix.join(' ')}.join("\n") + "\n"
+    @pixels.map { |pix| pix.join(' ') }.join("\n") + "\n"
   end
 
   def clear_table
-    @pixels = (1..@rows).map { (1..@columns).map {"O"}}
+    @pixels = (1..@rows).map { (1..@columns).map {"O"} }
   end
+
 
 end

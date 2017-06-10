@@ -16,4 +16,11 @@ describe Image do
       expect(@image.show_image_content).to eq "O O\nO O\nO O\n"
     end
   end
+
+  describe '#colour_pixels' do
+    it 'colours pixels with given colour' do
+      @image.colour_pixel(2,3,"C")
+      expect(@image.show_image_content).to eq "O O\nO O\nO C\n"
+    end
+  end
 end
