@@ -9,11 +9,11 @@ class BitmapEditor
 
   def parse_file(file)
     file_content = File.read(file).split("\n")
-    file_content.map { |cmd_arg| evaluate cmd_arg }
+    file_content.map { |line| get_command line }
   end
 
-  def evaluate(cmd_arg)
-    cmd, *args = cmd_arg.split(' ').map { |el| el =~ /\d+/ ? el.to_i : el }
+  def get_command(line)
+    cmd, *args = line.split(' ').map { |el| el =~ /\d+/ ? el.to_i : el }
 
     case cmd
       when "I" then create_img(*args)

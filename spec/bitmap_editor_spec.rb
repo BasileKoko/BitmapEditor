@@ -25,17 +25,17 @@ describe BitmapEditor do
   end
 
   describe '#parse_file' do
-    it 'parses file and call method evaluate for each line' do
+    it 'parses file and call method get_command for each line' do
       subject.parse_file(@file)
       dbl = "I 5 6"
-      expect(subject).to receive(:evaluate).with(dbl)
-      subject.evaluate(dbl)
+      expect(subject).to receive(:get_command).with(dbl)
+      subject.get_command(dbl)
     end
 
     describe 'when command is I' do
       it 'calls method create_img' do
         cmd_arg = "I 5 6"
-        allow(subject).to receive(:evaluate).with(cmd_arg)
+        allow(subject).to receive(:get_command).with(cmd_arg)
         expect(subject).to receive(:create_img).with(5,6)
         subject.create_img(5,6)
       end
@@ -50,7 +50,7 @@ describe BitmapEditor do
     describe 'when command is L' do
       it 'calls method colour_pix' do
         cmd_arg = "L 1 3 A"
-        allow(subject).to receive(:evaluate).with(cmd_arg)
+        allow(subject).to receive(:get_command).with(cmd_arg)
         expect(subject).to receive(:colour_pix).with(1, 3, "A")
         subject.colour_pix(1, 3, "A")
       end
@@ -65,7 +65,7 @@ describe BitmapEditor do
     describe 'when command is V' do
       it 'calls method draw_vert' do
         cmd_arg = "V 2 3 6 W"
-        allow(subject).to receive(:evaluate).with(cmd_arg)
+        allow(subject).to receive(:get_command).with(cmd_arg)
         expect(subject).to receive(:draw_vert).with(2, 3, 6, "W")
         subject.draw_vert(2, 3, 6, "W")
       end
@@ -79,7 +79,7 @@ describe BitmapEditor do
     describe 'when command is H' do
       it 'calls method draw_horz' do
         cmd_arg = "H 3 5 2 Z"
-        allow(subject).to receive(:evaluate).with(cmd_arg)
+        allow(subject).to receive(:get_command).with(cmd_arg)
         expect(subject).to receive(:draw_horz).with(3, 5, 2, "Z")
         subject.draw_horz(3, 5, 2, "Z")
       end
@@ -92,7 +92,7 @@ describe BitmapEditor do
 
     describe 'when command is S' do
       it 'calls method show_cont' do
-        allow(subject).to receive(:evaluate).with("S")
+        allow(subject).to receive(:get_command).with("S")
         expect(subject).to receive(:show_cont)
         subject.show_cont
       end
@@ -105,7 +105,7 @@ describe BitmapEditor do
 
     describe 'when command is C' do
       it 'calls method clear_tbl' do
-        allow(subject).to receive(:evaluate).with("C")
+        allow(subject).to receive(:get_command).with("C")
         expect(subject).to receive(:clear_tbl)
         subject.clear_tbl
       end
@@ -118,7 +118,7 @@ describe BitmapEditor do
 
     describe 'when command is not recognized' do
       it 'return unknown command message' do
-        expect(subject.evaluate("Z")).to eq "Unknown command"
+        expect(subject.get_command("Z")).to eq "Unknown command"
       end
     end
   end
