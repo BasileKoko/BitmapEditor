@@ -1,9 +1,11 @@
 class Image
-  attr_reader :columns, :rows
+  attr_reader :columns, :rows, :pixels
 
   def initialize(columns, rows)
     @columns, @rows = columns, rows
+    clear_table
   end
+
 
   def colour_pixel(x, y, colour)
   end
@@ -15,9 +17,11 @@ class Image
   end
 
   def show_image_content
+    @pixels.map {|pix| pix.join(' ')}.join("\n") + "\n"
   end
 
   def clear_table
+    @pixels = (1..@rows).map { (1..@columns).map {"O"}}
   end
 
 end
