@@ -122,4 +122,11 @@ describe BitmapEditor do
       end
     end
   end
+
+  describe '#create_img' do
+    it 'returns an error message when creating image with wrong number of arguments' do
+      expect(STDOUT).to receive(:puts).with("Wrong number of arguments")
+      subject.create_img(2)
+    end
+  end
 end
