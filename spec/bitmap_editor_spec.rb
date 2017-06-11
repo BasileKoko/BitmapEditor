@@ -143,4 +143,14 @@ describe BitmapEditor do
       subject.colour_pix("-2",3,"W")
     end
   end
+
+  describe '#draw_vert' do
+    before(:each) do
+    subject.create_img(2,3)
+    end
+    it 'returns an error message when drawing vertical segment with wrong number of arguments' do
+      expect(STDOUT).to receive(:puts).with("Wrong number of arguments")
+      subject.draw_vert(2,1,3)
+    end
+  end
 end
