@@ -51,5 +51,11 @@ describe Image do
       @image.clear_table
       expect(@image.show_image_content).to eq "O O\nO O\nO O\n"
     end
+
+    it 'returns an error when co-ordinate is wrong' do
+      @image1 = Image.new('-2', 3)
+      expect(STDOUT).to receive(:puts).with("Wrong or missing argument")
+      @image1.clear_table
+    end
   end
 end
