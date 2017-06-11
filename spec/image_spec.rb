@@ -44,4 +44,12 @@ describe Image do
       expect(@image.show_image_content).to eq "O O\nO O\nO W\n"
     end
   end
+
+  describe '#clear_table' do
+    it 'clears table and set all pixels to white(O)' do
+      @image.colour_pixel(2,3,"W")
+      @image.clear_table
+      expect(@image.show_image_content).to eq "O O\nO O\nO O\n"
+    end
+  end
 end
