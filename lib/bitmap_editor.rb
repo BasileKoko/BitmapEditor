@@ -43,6 +43,8 @@ class BitmapEditor
 
   def draw_vert(*args)
     @image.draw_vertical_segment(*args)
+  rescue ArgumentError => arg
+    puts "Wrong number of arguments"
   end
 
   def draw_horz(*args)
