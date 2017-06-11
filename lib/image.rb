@@ -23,10 +23,6 @@ class Image
   end
 
   def clear_table
-    begin
-      @pixels = (1..@rows).map { (1..@columns).map {"O"} }
-    rescue ArgumentError => arg
-      puts "Wrong or missing argument"
-    end
+    @pixels = (1..@rows).map { (1..@columns).map {"O"} }
   end
 end
