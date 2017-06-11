@@ -29,6 +29,8 @@ class BitmapEditor
 
   def create_img(*args)
     @image = Image.new(*args)
+  rescue ArgumentError => arg
+    puts "Wrong number of arguments"
   end
 
   def colour_pix(*args)
