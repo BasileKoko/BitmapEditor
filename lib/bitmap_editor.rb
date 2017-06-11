@@ -37,6 +37,8 @@ class BitmapEditor
     @image.colour_pixel(*args)
   rescue ArgumentError => arg
     puts "Wrong number of arguments"
+  rescue NoMethodError => e
+    puts "Invalid argument type"
   end
 
   def draw_vert(*args)
