@@ -49,8 +49,8 @@ describe BitmapEditor do
 
     describe 'when command is L' do
       it 'calls method colour_pix' do
-        cmd_arg = "L 1 3 A"
-        allow(subject).to receive(:get_command).with(cmd_arg)
+        line = "L 1 3 A"
+        allow(subject).to receive(:get_command).with(line)
         expect(subject).to receive(:colour_pix).with(1, 3, "A")
         subject.colour_pix(1, 3, "A")
       end
@@ -117,7 +117,7 @@ describe BitmapEditor do
     end
 
     describe 'when command is not recognized' do
-      it 'return unknown command message' do
+      it 'returns unknown command message' do
         expect(subject.get_command("Z")).to eq "Unknown command"
       end
     end
