@@ -37,4 +37,11 @@ describe Image do
       expect(@image.show_image_content).to eq "O O\nO O\nZ Z\n"
     end
   end
+
+  describe '#show_image_content' do
+    it 'shows the content of an image' do
+      @image.colour_pixel(2,3,"W")
+      expect(@image.show_image_content).to eq "O O\nO O\nO W\n"
+    end
+  end
 end
