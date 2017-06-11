@@ -129,4 +129,12 @@ describe BitmapEditor do
       subject.create_img(2)
     end
   end
+
+  describe '#colour_pix' do
+    it 'returns an error message when coloring pixels with wrong number of arguments' do
+      subject.create_img(2,3)
+      expect(STDOUT).to receive(:puts).with("Wrong number of arguments")
+      subject.colour_pix(2,"W")
+    end
+  end
 end
