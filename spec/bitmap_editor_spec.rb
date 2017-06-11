@@ -122,13 +122,4 @@ describe BitmapEditor do
       end
     end
   end
-
-  describe '#create_img' do
-    before do
-      @image = Image.new("-3",2)
-    end
-    it 'returns an error when co-ordinate is wrong' do
-      expect(subject.create_img).to eq 'Wrong or missing argument'
-    end
-  end
 end
