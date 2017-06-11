@@ -13,7 +13,7 @@ class BitmapEditor
   end
 
   def get_command(line)
-    cmd, *args = line.split(' ').map { |el| el =~ /\d+/ ? el.to_i : el }
+    cmd, *args = line.split(' ').map { |el| (el.to_i > 0 && el.to_i < 251) ? el.to_i : el }
 
     case cmd
       when "I" then create_img(*args)
