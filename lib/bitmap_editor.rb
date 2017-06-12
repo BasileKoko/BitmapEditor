@@ -65,5 +65,7 @@ class BitmapEditor
 
   def clear_tbl
     @image.clear_table
+  rescue NoMethodError => e
+    puts "No table to clear"
   end
 end
