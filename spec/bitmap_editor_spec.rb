@@ -3,6 +3,7 @@ require 'bitmap_editor'
 describe BitmapEditor do
   before do
     @file = 'examples/show.txt'
+    @empty_file = 'examples/empty.txt'
     @image = Image.new(5,6)
   end
 
@@ -32,6 +33,13 @@ describe BitmapEditor do
       subject.get_command(line)
     end
 
+    it 'returns a message when file is empty' do
+      expect(STDOUT).to receive(:puts).with("You entered an empty file")
+      subject.run(@empty_file)
+    end
+  end
+
+  describe '#get_command' do
     describe 'when command is I' do
       it 'calls method create_img' do
         line = "I 5 6"

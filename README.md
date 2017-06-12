@@ -24,6 +24,6 @@ $ rspec
 
 ### Gems
 
-```ruby
+```
 rspec
 ```
