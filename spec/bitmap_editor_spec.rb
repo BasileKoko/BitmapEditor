@@ -174,4 +174,14 @@ describe BitmapEditor do
       subject.draw_horz(1,2,"-3", "W")
     end
   end
+
+  describe '#show_cont' do
+    before(:each) do
+      subject.create_img(3)
+    end
+    it 'returns an error message when there is no image to show' do
+      expect(STDOUT).to receive(:puts).with("No image found")
+      subject.show_cont
+    end
+  end
 end
