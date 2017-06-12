@@ -59,6 +59,8 @@ class BitmapEditor
 
   def show_cont
     @image.show_image_content
+  rescue NoMethodError => e
+    puts "No image found"
   end
 
   def clear_tbl
