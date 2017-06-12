@@ -121,6 +121,13 @@ describe BitmapEditor do
         expect(subject.get_command("Z")).to eq "Unknown command"
       end
     end
+
+    describe 'when command is lowercase' do
+      it 'creates a new image with pixels when command is i' do
+        line = 'i 2 2'
+        expect(subject.get_command(line).pixels).not_to be nil
+      end
+    end
   end
 
   describe '#create_img' do
