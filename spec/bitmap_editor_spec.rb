@@ -184,4 +184,14 @@ describe BitmapEditor do
       subject.show_cont
     end
   end
+
+  describe '#clear_tbl' do
+    before do
+      subject.create_img(3, "-2")
+    end
+    it 'returns an error message when there is no table to clear' do
+      expect(STDOUT).to receive(:puts).with("No table to clear")
+      subject.clear_tbl
+    end
+  end
 end
