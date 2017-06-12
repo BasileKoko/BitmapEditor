@@ -9,6 +9,7 @@ class BitmapEditor
 
   def parse_file(file)
     file_content = File.read(file).split("\n")
+    return puts 'You entered an empty file' if file_content.empty?
     file_content.map { |line| get_command line }
   end
 
