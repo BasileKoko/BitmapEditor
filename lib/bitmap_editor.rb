@@ -15,7 +15,7 @@ class BitmapEditor
   def get_command(line)
     cmd, *args = line.split(' ').map { |el| (el.to_i > 0 && el.to_i < 251) ? el.to_i : el }
 
-    case cmd
+    case cmd.upcase
       when "I" then create_img(*args)
       when "L" then colour_pix(*args)
       when "V" then draw_vert(*args)
