@@ -142,6 +142,12 @@ describe BitmapEditor do
       expect(STDOUT).to receive(:puts).with("Can't colour pixels with invalid argument type")
       subject.colour_pix("-2",3,"W")
     end
+
+    it 'does not colour pixel when colour name is lowercase' do
+      expect(STDOUT).to receive(:puts).with("O O\nO O\nO O\n")
+      subject.colour_pix(2,3,"w")
+      subject.show_cont
+    end
   end
 
   describe '#draw_vert' do
