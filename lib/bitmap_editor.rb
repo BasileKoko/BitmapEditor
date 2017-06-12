@@ -15,16 +15,16 @@ class BitmapEditor
   def get_command(line)
     cmd, *args = line.split(' ').map { |el| (el.to_i > 0 && el.to_i < 251) ? el.to_i : el }
 
-    case cmd.upcase
-      when "I" then create_img(*args)
-      when "L" then colour_pix(*args)
-      when "V" then draw_vert(*args)
-      when "H" then draw_horz(*args)
-      when "S" then show_cont
-      when "C" then clear_tbl
-      else
-        "Unknown command"
-      end
+    case cmd
+    when "I" then create_img(*args)
+    when "L" then colour_pix(*args)
+    when "V" then draw_vert(*args)
+    when "H" then draw_horz(*args)
+    when "S" then show_cont
+    when "C" then clear_tbl
+    else
+      "Command not found"
+    end
   end
 
   def create_img(*args)

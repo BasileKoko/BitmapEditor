@@ -25,7 +25,7 @@ describe BitmapEditor do
   end
 
   describe '#parse_file' do
-    it 'parses file and call method get_command for each line' do
+    it 'parses file and calls method get_command for each line' do
       subject.parse_file(@file)
       line = "I 5 6"
       expect(subject).to receive(:get_command).with(line)
@@ -118,14 +118,7 @@ describe BitmapEditor do
 
     describe 'when command is not recognized' do
       it 'returns unknown command message' do
-        expect(subject.get_command("Z")).to eq "Unknown command"
-      end
-    end
-
-    describe 'when command is lowercase' do
-      it 'creates a new image with pixels when command is i' do
-        line = 'i 2 2'
-        expect(subject.get_command(line).pixels).not_to be nil
+        expect(subject.get_command("Z")).to eq "Command not found"
       end
     end
   end
@@ -148,12 +141,6 @@ describe BitmapEditor do
     it 'returns an error message when colouring pixels with wrong type of arguments' do
       expect(STDOUT).to receive(:puts).with("Can't colour pixels with invalid argument type")
       subject.colour_pix("-2",3,"W")
-    end
-
-    it 'changes lowercase colour to uppercase ' do
-      expect(STDOUT).to receive(:puts).with("O O\nO O\nO W\n")
-      subject.colour_pix(2,3,"w")
-      subject.show_cont
     end
   end
 
