@@ -69,6 +69,7 @@ describe BitmapEditor do
         expect(subject).to receive(:draw_vert).with(2, 3, 6, "W")
         subject.draw_vert(2, 3, 6, "W")
       end
+
       it 'calls class Image method draw_vertical_segment' do
         allow(subject).to receive(:draw_vert).with(2, 3, 6, "W")
         expect(@image).to receive(:draw_vertical_segment).with(2,3,6,"W")
@@ -83,6 +84,7 @@ describe BitmapEditor do
         expect(subject).to receive(:draw_horz).with(3, 5, 2, "Z")
         subject.draw_horz(3, 5, 2, "Z")
       end
+
       it 'calls class Image method draw_horizontal_segment' do
         allow(subject).to receive(:draw_horz).with(3, 5, 2, "Z")
         expect(@image).to receive(:draw_horizontal_segment).with(3,5,2,"Z")
@@ -96,6 +98,7 @@ describe BitmapEditor do
         expect(subject).to receive(:show_cont)
         subject.show_cont
       end
+
       it 'calls class Image method show_image_content' do
         allow(subject).to receive(:show_cont)
         expect(@image).to receive(:show_image_content)
@@ -109,6 +112,7 @@ describe BitmapEditor do
         expect(subject).to receive(:clear_tbl)
         subject.clear_tbl
       end
+
       it 'calls class Image method clear_table' do
         allow(subject).to receive(:clear_tbl)
         expect(@image).to receive(:clear_table)
@@ -132,12 +136,14 @@ describe BitmapEditor do
 
   describe '#colour_pix' do
     before(:each) do
-    subject.create_img(2,3)
+      subject.create_img(2,3)
     end
+
     it 'returns an error message when colouring pixels with wrong number of arguments' do
       expect(STDOUT).to receive(:puts).with("Can't colour pixels with wrong number of arguments")
       subject.colour_pix(2,"W")
     end
+
     it 'returns an error message when colouring pixels with wrong type of arguments' do
       expect(STDOUT).to receive(:puts).with("Can't colour pixels with invalid argument type")
       subject.colour_pix("-2",3,"W")
@@ -185,6 +191,7 @@ describe BitmapEditor do
     before do
       subject.create_img(3,"-2")
     end
+
     it 'returns an error message when there is no image to show' do
       expect(STDOUT).to receive(:puts).with("No image found")
       subject.show_cont
@@ -195,6 +202,7 @@ describe BitmapEditor do
     before do
       subject.create_img(3, "-2")
     end
+
     it 'returns an error message when there is no table to clear' do
       expect(STDOUT).to receive(:puts).with("No table to clear")
       subject.clear_tbl
