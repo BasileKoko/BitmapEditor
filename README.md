@@ -13,7 +13,7 @@ $ cd BitmapEditor
 ### To run the program
 ```
 $ bin/bitmap_editor 'filepath'
-example : bin/bitmap_editor examples/show.txt
+example: bin/bitmap_editor examples/show.txt
 ```
 
 ### To run tests
@@ -23,7 +23,7 @@ $ rspec
 ```
 
 ### Gems
+
 ```ruby
 rspec
-
 ```
