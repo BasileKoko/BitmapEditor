@@ -19,7 +19,7 @@ class Image
   end
 
   def show_image_content
-    @pixels.map { |pix| pix.join(' ') }.join("\n") + "\n"
+    puts @pixels.map { |pix| pix.join(' ') }.join("\n") + "\n"
   end
 
   def clear_table
