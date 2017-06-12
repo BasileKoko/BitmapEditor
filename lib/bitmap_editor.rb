@@ -30,21 +30,21 @@ class BitmapEditor
   def create_img(*args)
     @image = Image.new(*args)
   rescue ArgumentError => arg
-    puts "Wrong number of arguments"
+    puts "Can't create new image with wrong number of arguments"
   end
 
   def colour_pix(*args)
     @image.colour_pixel(*args)
   rescue ArgumentError => arg
-    puts "Wrong number of arguments"
+    puts "Can't colour pixels with wrong number of arguments"
   rescue NoMethodError => e
-    puts "Invalid argument type"
+    puts "Can't colour pixels with invalid argument type"
   end
 
   def draw_vert(*args)
     @image.draw_vertical_segment(*args)
   rescue ArgumentError => arg
-    puts "Wrong number of arguments"
+    puts "Can't draw vertical segment with wrong number of arguments"
   end
 
   def draw_horz(*args)

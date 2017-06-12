@@ -125,7 +125,7 @@ describe BitmapEditor do
 
   describe '#create_img' do
     it 'returns an error message when creating image with wrong number of arguments' do
-      expect(STDOUT).to receive(:puts).with("Wrong number of arguments")
+      expect(STDOUT).to receive(:puts).with("Can't create new image with wrong number of arguments")
       subject.create_img(2)
     end
   end
@@ -135,11 +135,11 @@ describe BitmapEditor do
     subject.create_img(2,3)
     end
     it 'returns an error message when colouring pixels with wrong number of arguments' do
-      expect(STDOUT).to receive(:puts).with("Wrong number of arguments")
+      expect(STDOUT).to receive(:puts).with("Can't colour pixels with wrong number of arguments")
       subject.colour_pix(2,"W")
     end
     it 'returns an error message when colouring pixels with wrong type of arguments' do
-      expect(STDOUT).to receive(:puts).with("Invalid argument type")
+      expect(STDOUT).to receive(:puts).with("Can't colour pixels with invalid argument type")
       subject.colour_pix("-2",3,"W")
     end
   end
@@ -148,8 +148,9 @@ describe BitmapEditor do
     before(:each) do
     subject.create_img(2,3)
     end
+
     it 'returns an error message when drawing vertical segment with wrong number of arguments' do
-      expect(STDOUT).to receive(:puts).with("Wrong number of arguments")
+      expect(STDOUT).to receive(:puts).with("Can't draw vertical segment with wrong number of arguments")
       subject.draw_vert(2,1,3)
     end
   end
