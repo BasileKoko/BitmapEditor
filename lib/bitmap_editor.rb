@@ -9,7 +9,7 @@ class BitmapEditor
 
   def parse_file(file)
     file_content = File.read(file).split("\n")
-    return puts 'You entered an empty file' if file_content.empty?
+    return puts 'Please provide a file which is not empty' if file_content.empty?
     file_content.map { |line| get_command line }
   end
 
@@ -24,7 +24,7 @@ class BitmapEditor
     when "S" then show_cont
     when "C" then clear_tbl
     else
-      "Command not found"
+      puts "Command not found"
     end
   end
 
@@ -39,7 +39,7 @@ class BitmapEditor
   rescue ArgumentError => arg
     puts "Can't colour pixels with wrong number of arguments"
   rescue NoMethodError => e
-    puts "Can't colour pixels with invalid argument type"
+    puts "Can't colour pixels: no image found or invalid arguments type given"
   end
 
   def draw_vert(*args)
@@ -47,7 +47,7 @@ class BitmapEditor
   rescue ArgumentError => arg
     puts "Can't draw vertical segment with wrong number of arguments"
   rescue NoMethodError => e
-    puts "Can't draw vertical segment with invalid argument type"
+    puts "Can't draw vertical segment: no image found or invalid arguments type given"
   end
 
   def draw_horz(*args)
@@ -55,7 +55,7 @@ class BitmapEditor
   rescue ArgumentError => arg
     puts "Can't draw horizontal segment with wrong number of arguments"
   rescue NoMethodError => e
-    puts "Can't draw horizontal segment with invalid argument type"
+    puts "Can't draw horizontal segment: no image found or invalid arguments type given"
   end
 
   def show_cont

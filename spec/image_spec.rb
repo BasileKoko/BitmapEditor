@@ -51,7 +51,7 @@ describe Image do
   end
 
   describe '#clear_table' do
-    it 'clears table and set all pixels to white(O)' do
+    it 'clears table and set all pixels to O' do
       @image.colour_pixel(2,3,"W")
       @image.clear_table
       expect(STDOUT).to receive(:puts).with("O O\nO O\nO O\n")
