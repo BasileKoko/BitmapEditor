@@ -45,14 +45,14 @@ class BitmapEditor
     @image.draw_vertical_segment(*args)
   rescue ArgumentError => arg
     puts "Can't draw vertical segment with wrong number of arguments"
-  rescue NoMethodError => e
-    puts "Can't draw vertical segment with invalid argument type"
   end
 
   def draw_horz(*args)
     @image.draw_horizontal_segment(*args)
   rescue ArgumentError => arg
     puts "Can't draw horizontal segment with wrong number of arguments"
+  rescue NoMethodError => e
+    puts "Can't draw horizontal segment with invalid argument type"
   end
 
   def show_cont

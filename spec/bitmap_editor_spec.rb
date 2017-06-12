@@ -168,5 +168,10 @@ describe BitmapEditor do
       expect(STDOUT).to receive(:puts).with("Can't draw horizontal segment with wrong number of arguments")
       subject.draw_horz(1,2,3)
     end
+
+    it 'returns an error message when drawing horizontal segment with wrong type of argument' do
+      expect(STDOUT).to receive(:puts).with("Can't draw horizontal segment with invalid argument type")
+      subject.draw_horz(1,2,"-3", "W")
+    end
   end
 end
