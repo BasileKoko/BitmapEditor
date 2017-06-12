@@ -146,17 +146,27 @@ describe BitmapEditor do
 
   describe '#draw_vert' do
     before(:each) do
-    subject.create_img(2,3)
+      subject.create_img(2,3)
     end
 
     it 'returns an error message when drawing vertical segment with wrong number of arguments' do
       expect(STDOUT).to receive(:puts).with("Can't draw vertical segment with wrong number of arguments")
       subject.draw_vert(2,1,3)
     end
-    
+
     it 'returns an error message when drawing vertical segment with wrong type of arguments' do
       expect(STDOUT).to receive(:puts).with("Can't draw vertical segment with invalid argument type")
       subject.draw_vert("0","","-2","Z")
+    end
+  end
+
+  describe '#draw_horz' do
+    before(:each) do
+      subject.create_img(3,4)
+    end
+    it 'returns an error message when drawing horizontal segment with wrong number of arguments' do
+      expect(STDOUT).to receive(:puts).with("Can't draw horizontal segment with wrong number of arguments")
+      subject.draw_horz(1,2,3)
     end
   end
 end
