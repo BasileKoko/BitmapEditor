@@ -51,6 +51,8 @@ class BitmapEditor
 
   def draw_horz(*args)
     @image.draw_horizontal_segment(*args)
+  rescue ArgumentError => arg
+    puts "Can't draw horizontal segment with wrong number of arguments"
   end
 
   def show_cont
