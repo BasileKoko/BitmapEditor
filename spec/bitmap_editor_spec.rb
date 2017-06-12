@@ -27,15 +27,15 @@ describe BitmapEditor do
   describe '#parse_file' do
     it 'parses file and call method get_command for each line' do
       subject.parse_file(@file)
-      dbl = "I 5 6"
-      expect(subject).to receive(:get_command).with(dbl)
-      subject.get_command(dbl)
+      line = "I 5 6"
+      expect(subject).to receive(:get_command).with(line)
+      subject.get_command(line)
     end
 
     describe 'when command is I' do
       it 'calls method create_img' do
-        cmd_arg = "I 5 6"
-        allow(subject).to receive(:get_command).with(cmd_arg)
+        line = "I 5 6"
+        allow(subject).to receive(:get_command).with(line)
         expect(subject).to receive(:create_img).with(5,6)
         subject.create_img(5,6)
       end
@@ -64,8 +64,8 @@ describe BitmapEditor do
 
     describe 'when command is V' do
       it 'calls method draw_vert' do
-        cmd_arg = "V 2 3 6 W"
-        allow(subject).to receive(:get_command).with(cmd_arg)
+        line = "V 2 3 6 W"
+        allow(subject).to receive(:get_command).with(line)
         expect(subject).to receive(:draw_vert).with(2, 3, 6, "W")
         subject.draw_vert(2, 3, 6, "W")
       end
@@ -78,8 +78,8 @@ describe BitmapEditor do
 
     describe 'when command is H' do
       it 'calls method draw_horz' do
-        cmd_arg = "H 3 5 2 Z"
-        allow(subject).to receive(:get_command).with(cmd_arg)
+        line = "H 3 5 2 Z"
+        allow(subject).to receive(:get_command).with(line)
         expect(subject).to receive(:draw_horz).with(3, 5, 2, "Z")
         subject.draw_horz(3, 5, 2, "Z")
       end
@@ -176,7 +176,7 @@ describe BitmapEditor do
   end
 
   describe '#show_cont' do
-    before(:each) do
+    before do
       subject.create_img(3,"-2")
     end
     it 'returns an error message when there is no image to show' do
