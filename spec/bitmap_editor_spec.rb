@@ -34,7 +34,7 @@ describe BitmapEditor do
     end
 
     it 'returns message to provide file which is not empty' do
-      expect(STDOUT).to receive(:puts).with("Please provide a file which is not empty")
+      expect(STDOUT).to receive(:puts).with("Please provide file which is not empty")
       subject.run(@empty_test_file)
     end
   end
