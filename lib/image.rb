@@ -2,7 +2,8 @@ class Image
   attr_reader :columns, :rows, :pixels
 
   def initialize(columns, rows)
-    @columns, @rows = columns, rows
+    @columns = columns
+    @rows = rows
     clear_table
   end
 
@@ -23,6 +24,6 @@ class Image
   end
 
   def clear_table
-    @pixels = (1..@rows).map { (1..@columns).map {"O"} }
+    @pixels = (1..@rows).map { (1..@columns).map { 'O' } }
   end
 end
