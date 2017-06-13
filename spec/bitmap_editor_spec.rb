@@ -3,7 +3,7 @@ require 'bitmap_editor'
 describe BitmapEditor do
   before do
     @file = 'examples/show.txt'
-    @empty_file = 'examples/empty.txt'
+    @empty_test_file = 'examples/empty_test_file.txt'
     @image = Image.new(5,6)
   end
 
@@ -35,7 +35,7 @@ describe BitmapEditor do
 
     it 'returns message to provide file which is not empty' do
       expect(STDOUT).to receive(:puts).with("Please provide a file which is not empty")
-      subject.run(@empty_file)
+      subject.run(@empty_test_file)
     end
   end
 
