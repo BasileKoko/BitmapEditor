@@ -23,6 +23,7 @@ class BitmapEditor
     when 'H' then draw_horz(*args)
     when 'S' then show_cont
     when 'C' then clear_tbl
+    when 'D' then draw_diag(*args)
     else
       puts 'Command not found'
     end
@@ -56,6 +57,14 @@ class BitmapEditor
     puts "Can't draw horizontal segment with wrong number of arguments"
   rescue NoMethodError
     puts "Can't draw horizontal segment: no image found or invalid arguments type given"
+  end
+
+  def draw_diag(*args)
+    @image.draw_diagonal(*args)
+  rescue ArgumentError
+    puts "Can't draw diagonal with wring number of arguments"
+  rescue NoMethodError
+    puts "Can't draw diagonal: no image found or invalid arguments type given"
   end
 
   def show_cont

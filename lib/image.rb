@@ -19,6 +19,10 @@ class Image
     (start_column..end_column).map { |column| colour_pixel(column, row, colour) }
   end
 
+  def draw_diagonal(x, y, colour, length)
+    (1..length + 1).map {|l| colour_pixel(l, l, colour )}
+  end
+
   def show_image_content
     puts @pixels.map { |pix| pix.join(' ') }.join("\n") + "\n"
   end

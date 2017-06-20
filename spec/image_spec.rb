@@ -42,6 +42,14 @@ describe Image do
     end
   end
 
+  describe '#draw_diagonal' do
+    it 'draws diagonal with given color' do
+      @image.draw_diagonal(1, 2, 'A', 1)
+      expect(STDOUT).to receive(:puts).with("A O\nO A\nO O\n")
+      @image.show_image_content
+    end
+  end
+
   describe '#show_image_content' do
     it 'shows the content of an image' do
       @image.colour_pixel(2, 3, 'W')

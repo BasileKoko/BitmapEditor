@@ -128,6 +128,20 @@ describe BitmapEditor do
       end
     end
 
+    describe 'when command is D' do
+      it 'calls method draw_diag'do
+      allow(subject).to receive(:get_command).with('D')
+      expect(subject).to receive(:draw_diag)
+      subject.draw_diag
+      end
+
+      it 'calls method draw_diagonal from class Image' do
+        allow(subject).to receive(:draw_diag)
+        expect(@image).to receive(:draw_diagonal)
+        @image.draw_diagonal(1, 2, "A", 2)
+      end
+    end
+
     describe 'when command is unknown' do
       it 'returns command not found message' do
         expect(STDOUT).to receive(:puts).with('Command not found')
